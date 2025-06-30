@@ -1,7 +1,10 @@
 FROM python:3.10-slim
 
-# ###
-#
-# 다음 주석을 지우고 docker 파일을 완성하자.
-#
-# ###
+WORKDIR /app
+
+COPY requirements.txt .
+COPY run_client.py .
+
+RUN pip install -r requirements.txt
+
+CMD ["python", "-u","run_client.py"]
