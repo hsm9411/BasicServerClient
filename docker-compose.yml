@@ -6,6 +6,7 @@ services:
     # ###
 
   client:
-    # ###
-    # 다음 주석을 지우고 compose 를 완성하자
-    # ###
+    build: ./client
+    container_name: client
+    depends_on:
+      - server
